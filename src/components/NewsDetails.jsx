@@ -25,8 +25,8 @@ const NewsDetails = () => {
     <div>
       <h3 className="text-2xl font-semibold">
         Total {filterNews.length} News Found
-        {filterNews.map((news) => (
-          <NewsCard news={news}></NewsCard>
+        {filterNews.map((news, i) => (
+          <NewsCard key={i} news={news}></NewsCard>
         ))}
       </h3>
     </div>

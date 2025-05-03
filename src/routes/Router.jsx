@@ -7,6 +7,8 @@ import NewCardDetails from "../components/NewCardDetails";
 import Login from "../components/Login";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import PrivetRoute from "../components/Provider/PrivetRoute";
+import Loading from "../components/Loading";
 
 const Router = createBrowserRouter([
   {
@@ -25,6 +27,7 @@ const Router = createBrowserRouter([
           return data;
         },
         Component: NewsDetails,
+        hydrateFallbackElement: <Loading></Loading>,
       },
     ],
   },
@@ -36,7 +39,12 @@ const Router = createBrowserRouter([
       return data;
     },
 
-    Component: NewCardDetails,
+    element: (
+      <PrivetRoute>
+        <NewCardDetails></NewCardDetails>
+      </PrivetRoute>
+    ),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "/auth/login",

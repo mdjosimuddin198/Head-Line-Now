@@ -10,7 +10,7 @@ const NewCardDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
   const [newsInfo, setNewsInfo] = useState({});
-  console.log(id);
+  // console.log(id);
   //   console.log(data);
 
   useEffect(() => {
